@@ -115,8 +115,10 @@ for file in csv_files:
     print(baro_data['LEVEL'].isnull().sum())
     baro_data['LEVEL'].fillna(0, inplace=True)
     # Reindex numeric_data to the index of baro_data
-    numeric_data = numeric_data.reindex(baro_data.index)
-    data['LEVEL'] = numeric_data['LEVEL'] - baro_data['LEVEL']
+    numeric_data = numeric_data.merge(baro_data, how='inner', left_index=True, right_index=True)
+    print("Columns in numeric_data: ", numeric_data.columns)
+    print("Columns in baro_data: ", baro_data.columns)
+    data['LEVEL'] = numeric_data['LEVEL_x'] - baro_data['LEVEL']
     print(f"First line of data after barometric pressure correction for file {file}:\n{data.iloc[0]}")
     # Write the results of the barometric pressure correction to a CSV file
     data[['LEVEL']].to_csv(f'{serial_number}_{id}_barometric_pressure_correction.csv')
@@ -131,7 +133,7 @@ for file in csv_files:
     print(f"GW_Elevation_1 value: {lookup_row['GW_Elevation_1'].values[0]}")
 
     # Check if numeric_data['LEVEL'].iloc[0] or baro_data['LEVEL'].iloc[0] is NaN
-    if pd.isnull(numeric_data['LEVEL'].iloc[0]) or pd.isnull(baro_data['LEVEL'].iloc[0]):
+    if pd.isnull(data['LEVEL'].iloc[0]) or pd.isnull(baro_data['LEVEL'].iloc[0]):
         print(f"Missing data in file {file}")
         continue
 
@@ -224,7 +226,7 @@ plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))  # Format 
 #plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=7))  # Set major ticks interval to number of days
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))  # Set major ticks interval to number of months
 plt.gcf().autofmt_xdate()  # Rotate date labels automatically
-plt.ylim(1660, 1686)  # Set y-axis limits
+plt.ylim(1670, 1688)  # Set y-axis limits
 
 # Set a fixed start and end date for the x-axis
 start_date = pd.to_datetime('12/01/2022')

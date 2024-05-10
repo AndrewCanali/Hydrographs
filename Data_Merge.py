@@ -39,7 +39,7 @@ for file in transducer_files:
     # Group all files by checking the second line of each CSV file to check if the serial numbers match
     metadata = pd.read_csv(file, nrows=10, header=None, encoding='ISO-8859-1')
     serial_number = metadata.iloc[1,0]
-    location = metadata.iloc[4,0]
+    location = metadata.iloc[5,0]
     if serial_number not in grouped_files:
         grouped_files[serial_number] = {'location': location, 'files': [file]}
     else:
