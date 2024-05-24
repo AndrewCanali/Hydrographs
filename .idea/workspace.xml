@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72576f50-0e96-42cc-8889-3a40b3cdea1a" name="Changes" comment="Updated code to omit erroneous data and reformatted to handle collated datasets with metadata removed from Solinst file outputs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_Merge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Merge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hydrograph_Plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hydrograph_Plots.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,17 +47,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Data_Merge.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Hydrograph_Plots.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/acanali/PycharmProjects/Hydrographs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Data_Merge.executor": "Run",
+    "Python.Hydrograph_Plots.executor": "Run",
+    "Python.X-Y Scatter.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/acanali/PycharmProjects/Hydrographs/Data_Merge.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\acanali\PycharmProjects\Hydrographs" />
@@ -93,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715266468486</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated code to omit erroneous data and reformatted to handle collated datasets with metadata removed from Solinst file outputs.">
+      <option name="closed" value="true" />
+      <created>1715361884083</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715361884083</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

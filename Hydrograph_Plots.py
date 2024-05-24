@@ -199,6 +199,12 @@ for file in csv_files:
     # Add corrected data to all_data dataframe
     all_data[id] = data['GW_Elevation_masl']
 
+    # Print min and max groundwater elevation for each location
+    for column in all_data.columns:
+        min_elevation = all_data[column].min()
+        max_elevation = all_data[column].max()
+        print(f"Min and Max groundwater elevation for {column}: {min_elevation}, {max_elevation}")
+
     #Omit erroneous data
     for _, erroneous_row in erroneous_data[
         (erroneous_data['Serial_Number'] == serial_number) & (erroneous_data['ID'] == id)].iterrows():
@@ -226,10 +232,10 @@ plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))  # Format 
 #plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=7))  # Set major ticks interval to number of days
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))  # Set major ticks interval to number of months
 plt.gcf().autofmt_xdate()  # Rotate date labels automatically
-plt.ylim(1670, 1688)  # Set y-axis limits
+plt.ylim(1500, 1510)  # Set y-axis limits
 
 # Set a fixed start and end date for the x-axis
-start_date = pd.to_datetime('12/01/2022')
+start_date = pd.to_datetime('01/01/2023')
 end_date = pd.to_datetime('01/01/2024')
 plt.gca().set_xlim([start_date, end_date])
 
@@ -240,7 +246,7 @@ plt.gca().set_xlim([start_date, end_date])
 # 'upper center' places the legend below the plot
 # bbox_to_anchor places the legend at the specified location
 # ncol sets the number of columns in the legend
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=len(all_data.columns)*2)
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=4)
 
 plt.tight_layout()
 plt.show()
